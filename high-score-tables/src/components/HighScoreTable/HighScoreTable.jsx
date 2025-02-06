@@ -12,7 +12,9 @@ const HighScoreTable = ({ country, scores = [] }) => (
       </tr>
     </thead>
     <tbody>
-      {scores.map((score, index) => (
+      {scores
+      .sort((a,b) => b.s - a.s)
+      .map((score, index) => (
         <PlayerScore key={index} name={score.n} score={score.s} />
       ))}
     </tbody>
